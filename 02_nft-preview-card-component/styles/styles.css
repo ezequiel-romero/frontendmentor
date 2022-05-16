@@ -1,0 +1,105 @@
+:root{
+    --outfit:'Outfit', sans-serif;
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: rgb(0, 255, 247);
+    --very-dark-blue-main: hsl(217, 54%, 11%);
+    --very-dark-blue-card: hsl(216, 50%, 16%);
+    --very-dark-blue-line: hsl(215, 32%, 27%);
+}
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    background-color: var(--very-dark-blue-main);
+    font-family: var(--outfit);
+    font-weight: 300;
+    color: var(--soft-blue);
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    font-size: 15px;
+}
+.content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.card {
+    background-color: var(--very-dark-blue-card);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+    border-radius: 20px;
+    width: 325px;
+    margin: 0 auto;
+    padding: 25px;
+}
+.card-img-container {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+.card-img {
+    width: 100%;
+    border-radius: 10px;
+}
+.card-img-overlay {
+    background: rgba(0, 255, 247,0.3);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 99%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+}
+.card-img-container:hover .card-img-overlay {
+    opacity: 1;
+}
+.card-title {
+    color: white;
+    font-weight: 600;
+    font-size: 1.5em;
+}
+.card-data {
+    margin: 0;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid hsl(215, 51%, 30%);
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+.card-price {
+    color: var(--cyan);
+    font-weight: 600;
+    background: url(../images/icon-ethereum.svg) left center no-repeat;
+    padding-left: 20px;
+}
+.card-exp {
+    background: url(../images/icon-clock.svg) left center no-repeat;
+    padding-left: 20px;
+}
+.card-footer {
+    padding-top: 10px;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+}
+.card-profile {
+    border: 1px solid white;
+    border-radius: 9999px;
+    margin-right: 10px;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+a:hover {
+    color: var(--cyan);
+}
