@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
 :root {
     --overpass: 'Overpass', sans-serif;
     --orange: #fb7413;
@@ -28,8 +29,27 @@ body {
     display: flex;
     width: 100%;
     min-width: 375px;
+    justify-content: center;
+    align-items: center;
 }
-.box-container {
+
+.flip-card {
+    min-width: 325px;
+    max-width: 375px;
+    height: 400px;
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+} 
+.flip-card-inner.flipped {
+    transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
     background: var(--dark-blue);
     background: rgba(37,45,55,1);
     background: linear-gradient(180deg, rgba(37,45,55,1) 0%, rgb(24, 28, 33) 100%);
@@ -39,6 +59,13 @@ body {
     margin: 0 auto;
     border-radius: 15px;
     align-self: center;
+    position: absolute;
+    width: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+.flip-card-back {
+    transform: rotateY(180deg);
 }
 .star {
     padding: 10px;
@@ -51,14 +78,21 @@ h1 {
     font-weight: 700;
     margin: 20px 0;
 }
-.rating-list {
-    margin: 35px 0;
-    padding: 0;
-    list-style: none;
+#form-rate .form-rate-inputs {
     display: flex;
     justify-content: space-between;
+    height: 50px;
+    margin: 20px 0;
 }
-.rating-number {
+#form-rate .form-rate-inputs input {
+    display: none;
+}
+#form-rate .form-rate-inputs input:checked ~ span {
+    opacity: 1;
+    background: #7c8798;
+    color: white;
+}
+#form-rate .form-rate-inputs span {
     width: 50px;
     height: 50px;
     border-radius: 999px;
@@ -68,14 +102,12 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    transition: all .2s;
 }
-.rating-number:hover {
+#form-rate .form-rate-inputs span:hover {
     color: white;
     background-color: var(--orange);
-}
-.active {
-    color: white;
-    background-color: var(--medium-grey);
 }
 .submit {
     width: 100%;
@@ -84,17 +116,16 @@ h1 {
     text-align: center;
     padding: 15px 0;
     border-radius: 999px;
+    border: none;
     text-transform: uppercase;
     letter-spacing: 5px;
     cursor: pointer;
 }
-.submit:hover {
+#form-rate .submit:hover {
     background-color: white;
     color: var(--orange);
 }
-.thankyou-container {
-    display: none;
-}
+
 .thanks-img{
     margin: 20px 0 40px 0;
 }
