@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+:root {
+    --very-dark-desaturated-blue: #1d1e35;
+    --soft-red: #f47c57;
+    --soft-violet: #af67e9;
+    --soft-blue: #6565e7;
+    --very-dark-grayish-blue: #4a4b5e;
+    --dark-grayish-blue: #787887;
+    --light-grayish-blue: #e7e7e9;
+}
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 13px;
+    background: #af67e9;
+    background: linear-gradient(180deg, #af67e9 0%, #6565e7 100%) fixed;
+}
+main {
+    display: grid;
+    place-items: center;
+    padding: 25px;
+}
+.content {
+    width: 325px;
+    text-align: center;
+    position: relative;
+}
+.box {
+    width: 80px;
+    left: 50px;
+    top: 80px;
+    position: absolute;
+    z-index: 999;
+}
+.hero {
+    z-index: 100;
+}
+.hero .hero__woman {
+    width: 250px;
+    z-index: 100;
+}
+.box-content {
+    background: url(../images/bg-pattern-mobile.svg) no-repeat white top center;
+    text-align: left;
+    margin-top: -75px;
+    border-radius: 20px;
+    padding: 130px 25px 25px 25px;
+    z-index: 10;
+}
+h1 {
+    text-align: center;
+}
+.accordion {
+    text-align: left;
+    background: none;
+    cursor: pointer;
+    color: var(--very-dark-grayish-blue);
+    width: 100%;
+    border: 0;
+    padding: 20px 0;
+}
+.accordion:hover {
+    color: var(--soft-red);
+}
+.accordion.active {
+    font-weight: bold;
+    color: var(--very-dark-desaturated-blue);
+}
+.accordion:after {
+    content: url(../images/icon-arrow-down.svg);
+    float: right;
+}
+.accordion.active:after {
+    transform: rotateX(180deg);
+}
+.panel {
+    color: var(--dark-grayish-blue);
+    display: none;
+    overflow: hidden;
+}
+.panel p {
+    margin-block-start: 0;
+}
+hr {
+    border-top: 1px solid var(--light-grayish-blue);
+}
+
+@media (min-width: 1050px) {  
+    main {
+        height: 100%;
+    }
+    .content {
+        background-color: white;
+        background-image: url(../images/bg-pattern-desktop.svg);
+        background-position: -80px center;
+        background-repeat: no-repeat;
+        background-size: 450px;
+        border-radius: 20px;
+        display: flex;
+        width: 1000px;
+    }
+    .hero {
+        overflow: hidden;
+    }
+    .hero .hero__woman {
+        width: 450px;
+        margin-top: 70px;
+        margin-left: -80px;
+    }
+    .box {
+        width: 180px;
+        left: -85px;
+        top: 190px;
+    }
+    .box-content {
+        background: none;
+        width: 40%;
+        margin: 0 auto;
+        padding: 50px 0;
+    }
+}
