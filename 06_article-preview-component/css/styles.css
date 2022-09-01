@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+:root {
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --desaturated-dark-blue: hsl(214, 17%, 51%);
+    --grayish-blue: hsl(212, 23%, 69%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+    --border-radius: 15px;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    color: var(--desaturated-dark-blue);
+    background-color: var(--light-grayish-blue);
+    padding: 25px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    max-width: 325px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+}
+
+.card_image {
+    display: flex;
+}
+
+.card_image img {
+    width: 100%;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+
+.card_main {
+    background-color: white;
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+}
+
+.card_main_content {
+    padding: 1.8rem 1.8rem 0.5rem 1.8rem;
+}
+
+.card_main_content h1 {
+    color: var(--very-dark-grayish-blue);
+    font-size: 1rem;
+}
+
+.card_main_footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 1.2rem 1.8rem 1.2rem 1.8rem;
+}
+
+.card_main_footer_profile {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.card_main_footer_profile_image {
+    display: flex;
+}
+
+.card_main_footer_profile_image img {
+    width: 40px;
+    border-radius: 100px;
+}
+
+.card_main_footer_profile_info p {
+    padding: 0;
+    margin: 0;
+}
+
+.card_main_footer_profile_info p:first-child {
+    padding-bottom: 5px;
+}
+
+.card_main_footer_icon_share, .card_main_footer_sharing_icon_share {
+    background-color: var(--light-grayish-blue);
+    display: flex;
+    cursor: pointer;
+    border-radius: 100px;
+    padding: 0.7rem;
+}
+
+.card_main_footer_sharing {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 1.8rem 1.2rem 1.8rem;
+    background-color:var(--very-dark-grayish-blue);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    transition: ease all 0.5s;
+}
+
+.card_main_footer_sharing.hidden {
+    display: none;
+    transition: ease all 0.5s;
+}
+
+.card_main_footer_sharing_links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--light-grayish-blue);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.card_main_footer_sharing_icon_share {
+    background-color: var(--desaturated-dark-blue)
+}
+
+@media screen and (min-width: 880px) {
+    body {
+        height: 100vh;
+        padding: 0;
+    }
+    .content {
+        height: 100%;
+        align-items: center;
+    }
+    .card {
+        display: flex;
+        max-width: 730px;
+    }
+    .card_image img {
+        border-top-left-radius: var(--border-radius);
+        border-top-right-radius: 0;
+        border-bottom-right-radius:0;
+        border-bottom-left-radius: var(--border-radius);
+    }
+    .card_main {
+        border-top-left-radius: 0;
+        border-top-right-radius: var(--border-radius);
+        border-bottom-right-radius: var(--border-radius);
+        border-bottom-left-radius: 0;
+    }
+    .card_main_footer_sharing {
+        border-radius: var(--border-radius);
+        justify-content: center;
+        padding: 1rem 0;
+        width: 250px;
+        top: -4.5rem;
+        right: 0;
+        bottom: unset;
+        left: unset;
+        margin-right: -66px;
+    }
+    .card_main_footer_sharing::before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        bottom: -10px;
+        left: 50%;
+        border: .75rem solid transparent;
+        border-top-color: var(--very-dark-grayish-blue);
+        border-bottom: none;
+        filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, .1));
+    }
+    .card_main_footer_sharing_icon_share {
+        display: none;
+    }
+}
