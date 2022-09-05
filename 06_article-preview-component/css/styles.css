@@ -108,12 +108,17 @@ body {
     background-color:var(--very-dark-grayish-blue);
     border-bottom-left-radius: var(--border-radius);
     border-bottom-right-radius: var(--border-radius);
-    transition: ease all 0.5s;
+    max-height: 0;
+    overflow: visible;
+    transition: max-height 0.5s ease-out;
 }
 
 .card_main_footer_sharing.hidden {
-    display: none;
-    transition: ease all 0.5s;
+    padding: 0;
+    transition: padding 0.5s ease-out;
+    overflow: hidden;
+    /* display: none;
+    transition: ease all 0.5s; */
 }
 
 .card_main_footer_sharing_links {
@@ -170,12 +175,11 @@ body {
         position: absolute;
         width: 0;
         height: 0;
-        bottom: -10px;
+        bottom: -12px;
         left: 50%;
         border: .75rem solid transparent;
         border-top-color: var(--very-dark-grayish-blue);
         border-bottom: none;
-        filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, .1));
     }
     .card_main_footer_sharing_icon_share {
         display: none;

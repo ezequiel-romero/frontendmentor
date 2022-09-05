@@ -5,11 +5,14 @@ const shareCloseIcon = document.querySelector(".card_main_footer_sharing_icon_sh
 shareOpenIcon.addEventListener("click", () => {
     if (shareBox.classList.contains("hidden")) {
         shareBox.classList.remove("hidden")
+        shareBox.style.maxHeight = shareBox.scrollHeight + "px"
     } else {
         shareBox.classList.add("hidden")
+        shareBox.style.maxHeight = "0"
     }
 })
 
 shareCloseIcon.addEventListener("click", () => {
     shareBox.classList.add("hidden")
+    shareBox.style.maxHeight = "0"
 })
