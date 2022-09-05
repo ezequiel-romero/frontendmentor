@@ -53,7 +53,7 @@ main {
 h1 {
     text-align: center;
 }
-.accordion {
+.btn {
     text-align: left;
     background: none;
     cursor: pointer;
@@ -62,24 +62,25 @@ h1 {
     border: 0;
     padding: 20px 0;
 }
-.accordion:hover {
+.btn:hover {
     color: var(--soft-red);
 }
-.accordion.active {
+.btn.active {
     font-weight: bold;
     color: var(--very-dark-desaturated-blue);
 }
-.accordion:after {
+.btn:after {
     content: url(../images/icon-arrow-down.svg);
     float: right;
 }
-.accordion.active:after {
+.btn.active:after {
     transform: rotateX(180deg);
 }
 .panel {
     color: var(--dark-grayish-blue);
-    display: none;
+    max-height: 0;
     overflow: hidden;
+    transition: max-height 0.5s ease-out;
 }
 .panel p {
     margin-block-start: 0;
